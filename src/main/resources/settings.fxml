@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="settingsPane" prefHeight="2000.0" prefWidth="1390.0" style="-fx-background-color: #133337;" stylesheets="@css/settings.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sda.settings.SettingsController">
+    <children>
+        <Pane prefHeight="100.0" prefWidth="1047.0">
+            <children>
+                <Label layoutX="112.0" layoutY="9.0" prefHeight="83.0" prefWidth="374.0" text="Settings" textFill="#f5cf7b">
+                    <font>
+                        <Font name="Consolas" size="36.0" />
+                    </font>
+                    <effect>
+                        <Glow />
+                    </effect>
+                </Label>
+                <ImageView fitHeight="83.0" fitWidth="77.0" layoutX="14.0" layoutY="12.0" onMouseClicked="#returnFromSettings" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image fx:id="iconURL" url="@icons/arrow-return.png" />
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <Glow level="0.2" />
+                    </effect>
+                </ImageView>
+            </children>
+        </Pane>
+
+        <Label fx:id="lblUserName" layoutX="85.0" layoutY="114.0" prefHeight="45.0" prefWidth="71.0" styleClass="label" text="User name">
+        </Label>
+
+        <Label fx:id="lblLocalization" layoutX="72.0" layoutY="253.0" styleClass="label" text="Localization">
+        </Label>
+        <Label fx:id="lblLimitCalories" layoutX="72.0" layoutY="373.0" styleClass="label" text="Calories limit">
+
+
+        </Label>
+
+        <TextField fx:id="txtUserName" layoutX="363.0" layoutY="117.0" prefHeight="39.0" prefWidth="285.0" />
+        <TextField fx:id="txtLocalization" layoutX="423.0" layoutY="273.0" prefHeight="39.0" prefWidth="285.0" />
+        <Slider fx:id="slider" blockIncrement="100.0" layoutX="414.0" layoutY="395.0" max="3500.0" min="500.0" prefHeight="15.0" prefWidth="524.0" />
+        <Label fx:id="lblSilderValue" layoutX="801.0" layoutY="350.0" prefHeight="39.0" prefWidth="136.0" text="Label" textAlignment="CENTER" />
+
+    </children>
+</Pane>

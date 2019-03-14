@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sda.main.Controller">
+   <children>
+      <ScrollPane fx:id="mainScrollPane" fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1040.0">
+         <content>
+            <FlowPane hgap="30.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #133337;" vgap="30.0">
+               <children>
+                  <Pane prefHeight="100.0" prefWidth="630.0">
+                     <children>
+                        <Label layoutX="9.0" layoutY="8.0" prefHeight="83.0" prefWidth="151.0" text="Welcome" textFill="#ffac7b">
+                           <font>
+                              <Font name="Consolas" size="36.0" />
+                           </font>
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </Label>
+                        <Label fx:id="usernameLabel" layoutX="160.0" layoutY="8.0" prefHeight="83.0" prefWidth="462.0" text="User!" textFill="#31d9a0">
+                           <font>
+                              <Font name="Consolas" size="36.0" />
+                           </font>
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="300.0" prefWidth="630.0" style="-fx-background-color: #31d9a0;">
+                     <children>
+                        <Label prefHeight="60.0" prefWidth="630.0" style="-fx-label-padding: 15, 15, 15, 15;" text="Notes" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Label>
+                         <Label fx:id="visibleNoteLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="54.0" onMouseClicked="#loadNotepad" prefHeight="233.0" prefWidth="601.0" style="-fx-label-padding: 15, 15, 15, 15;" text="note" textFill="WHITE" wrapText="true">
+                             <font>
+                                 <Font size="24.0" />
+                             </font>
+                             <opaqueInsets>
+                                 <Insets />
+                             </opaqueInsets>
+                           <effect>
+                              <Glow />
+                           </effect>
+                         </Label>
+                        <!--<ListView fx:id="lastNotesListView" layoutX="14.0" layoutY="60.0" prefHeight="229.0" prefWidth="602.0" style="-fx-background-color: #31d9a0;" />-->
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: #ffac7b;">
+                     <children>
+                         <Label prefHeight="60.0" prefWidth="253.0" style="-fx-label-padding: 15, 15, 15, 15; -fx-background-color: #ff9c62;" text="Calories today" textFill="WHITE">
+                             <font>
+                                 <Font size="24.0" />
+                             </font>
+                             <opaqueInsets>
+                                 <Insets />
+                             </opaqueInsets>
+                         </Label>
+                        <PieChart fx:id="caloriesPieChart" labelsVisible="false" layoutY="48.0" legendVisible="false" prefHeight="252.0" prefWidth="301.0" />
+                        <Label fx:id="caloriesAbsorbedLabel" layoutX="111.0" layoutY="148.0" text="1000" textFill="WHITE">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="addCaloriesLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="251.0" onMouseClicked="#incrementCalory" prefHeight="60.0" prefWidth="49.0" style="-fx-label-padding: 15, 15, 15, 15; -fx-background-color: #ff9c62;" text="+" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                        <TextField fx:id="newCaloriesTextField" alignment="CENTER_RIGHT" focusTraversable="false" layoutX="173.0" prefHeight="61.0" prefWidth="78.0" promptText="0" style="-fx-background-color: #ff9c62; -fx-text-fill: white;" text="0">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: #329fca;">
+                      <children>
+                          <Label prefHeight="60.0" prefWidth="300.0" style="-fx-label-padding: 15, 15, 15, 15;" text="Weather" textFill="WHITE">
+                              <font>
+                                  <Font size="24.0" />
+                              </font>
+                              <opaqueInsets>
+                                  <Insets />
+                              </opaqueInsets>
+                          </Label>
+                        <ImageView fx:id="wImageView" fitHeight="150.0" fitWidth="200.0" layoutX="75.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/weather-clouds.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="wTheTempLabel" layoutX="190.0" layoutY="14.0" text="- C" textFill="WHITE">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="wLocalizationLabel" layoutX="40.0" layoutY="210.0" text="-" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="wMaxTempLabel" layoutX="40.0" layoutY="245.0" text="- C" textFill="WHITE" />
+                        <Label fx:id="wMinTempLabel" layoutX="94.0" layoutY="245.0" opacity="0.52" text="- C" textFill="WHITE" />
+                      </children>
+                  </Pane>
+                  <Pane prefHeight="300.0" prefWidth="630.0" style="-fx-background-color: #ffc0cb;">
+                  <children>
+                      <Label prefHeight="60.0" prefWidth="630.0" style="-fx-label-padding: 15, 15, 15, 15;" text="Events today" textFill="WHITE">
+                          <font>
+                              <Font size="24.0" />
+                          </font>
+                          <cursor>
+                              <Cursor fx:constant="HAND" />
+                          </cursor>
+                          <opaqueInsets>
+                              <Insets />
+                          </opaqueInsets>
+                      </Label>
+                        <ListView fx:id="eventsTodayListView" layoutX="18.0" layoutY="60.0" prefHeight="223.0" prefWidth="592.0" style="-fx-background-color: #ffc0cb;" />
+                  </children>
+                  </Pane>
+                  <Pane prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: #a966b1;">
+                      <children>
+                        <ImageView fitHeight="222.0" fitWidth="226.0" layoutX="38.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/contacts.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                      </children>
+                  </Pane>
+                  <Pane prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: #F5CF7B;">
+                     <children>
+                        <ImageView fx:id="settingsIcon" cache="true" fitHeight="200.0" fitWidth="200.0" layoutX="50.0" layoutY="50.0" onMouseClicked="#loadSettings" pickOnBounds="true" preserveRatio="true">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <image>
+                              <Image url="@/icons/settings-icon.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+               <padding>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </padding>
+            </FlowPane>
+         </content>
+      </ScrollPane>
+   </children>
+</Pane>
